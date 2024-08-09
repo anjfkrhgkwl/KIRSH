@@ -1,0 +1,369 @@
+@charset "utf-8";
+
+
+html,body {
+    font-size: 62.5%;
+    /* 1rem = 10px */
+}
+body {
+    font-family: var(--font-suit);
+    font-weight: var(--font-normal);
+    color: var(--color-b);
+    background-color: var(--color-w);
+    cursor: default;
+}
+
+.mobile {
+    display: none;
+}
+
+
+/****************************** header *********************************/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 99;
+    background-color: var(--color-w);
+}
+.header .inner {
+    max-width: 100%;
+    width: calc(100% - 120px);
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.header .inner .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.header .inner .logo a {
+    display: block;
+    font-size: 6.5rem;
+    font-weight: var(--font-logo);
+}
+
+.header .inner .pc_nav {
+    height: 100%;
+}
+.header .inner .pc_nav .gnb {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+.header .inner .pc_nav .gnb > li {
+    height: 100%;
+    position: relative;
+}
+
+.header .inner .pc_nav .gnb > li .depth01 {
+    font-size: 1.6rem;
+    padding: 20px;
+    line-height: 100px;
+}
+.header .inner .pc_nav .gnb > li .depth01.color-r {
+    color: var(--color-p);
+    margin-left: 0;
+}
+.header .inner .pc_nav .gnb > li .depth02 {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    z-index: 999;
+    background-color: var(--color-w);
+    border: 1px solid var(--color-g1);
+    /* 마우스오버 했을때 on 붙도록 설정 스크립트 */
+    display: none;
+    padding: 10px 0;
+}
+.header .inner .pc_nav .gnb > li .depth02 li {}
+.header .inner .pc_nav .gnb > li .depth02 li a {
+    display: block;
+    font-size: 1.6rem;
+    transition: 0.5s;
+    padding: 10px 20px;
+}
+.header .inner .pc_nav .gnb > li .depth02 li:hover a {
+    color: var(--color-p);
+    transition: 0.5s;
+}
+
+.header .inner .util_list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+.header .inner .util_list > li {
+}
+.header .inner .util_list > li > a {
+    display: block;
+    height: 24px;
+}
+.header .inner .util_list li a img {
+    height: 100%;
+    object-fit: cover;
+}
+.header .inner .util_list li.search {}
+.header .inner .util_list li.wish_list {}
+.header .inner .util_list li.bag {}
+.header .inner .util_list li.mypage {}
+.header .inner .util_list li.lang {
+    position: relative;
+}
+.header .inner .util_list li.lang .lang_wrap {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    z-index: 999;
+    transform: translateX(-50%);
+    background-color: var(--color-w);
+    border: 1px solid var(--color-g1);
+    padding: 10px  0;
+    display: none;
+}
+.header .inner .util_list li.lang .lang_wrap li {}
+.header .inner .util_list li.lang .lang_wrap li a {
+    display: block;
+    font-size: 1.6rem;
+    padding: 10px 20px;
+}
+.header .inner .util_list li.lang .lang_wrap li:hover a {
+    color: var(--color-p);
+}
+.header .inner .util_list li.lang .lang_wrap li.kor {}
+.header .inner .util_list li.lang .lang_wrap li.eng {}
+
+
+/**** text slide ****/
+
+.header .header_text_slide {
+    width: 100%;
+    background-color: var(--color-p);
+    padding: 10px 0;
+}
+.header .header_text_slide .text_wrap {
+    width: 200%;
+    height: 100%;
+    display: flex;
+    animation: textslide 70s infinite linear;
+    white-space: nowrap;
+}
+@keyframes textslide {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+.header .header_text_slide .text_wrap > div {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.header .header_text_slide .text_wrap > div p {
+    font-size: 1.6rem;
+    color: var(--color-w);
+}
+.header .header_text_slide .text_wrap .text01 {}
+.header .header_text_slide .text_wrap .text02 {}
+
+/********************************* 반응형  **************************************/
+
+@media screen and (max-width:1024px) {
+    body.menustop {
+        overflow: hidden;
+    }
+    .header {
+        max-width: 1024px;
+    }
+    .header .inner {
+        max-width: 1024px;
+        width: calc(100% - 60px);
+    }
+
+    .pc {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    .mobile_menu {
+        width: 30px;
+        height: 30px;
+    }
+    .mobile_menu .menu_icon {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    .mobile_menu .menu_icon > div {
+        width: 30px;
+        height: 3px;
+        background-color: var(--color-b);
+        border-radius: 5px;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: 0.7s;
+    }
+    .mobile_menu .menu_icon > div:nth-child(2),
+    .mobile_menu .menu_icon > div:nth-child(3) {
+        top: 10px;
+    }
+    .mobile_menu .menu_icon > div:nth-child(4) {
+        top: 20px;
+    }
+    .mobile_menu .menu_icon > div span {
+        display: block;
+        position: absolute;
+        left: -9999999999999999999999px;
+    }
+
+    .mobile_menu .menu_icon > div.active:nth-child(1),
+    .mobile_menu .menu_icon > div.active:nth-child(4) {
+        opacity: 0;
+    }
+
+    .mobile_menu .menu_icon > div.active:nth-child(2) {
+        transform: rotate(45deg);
+    }
+    .mobile_menu .menu_icon > div.active:nth-child(3) {
+        transform: rotate(-45deg);
+    }
+
+    .mobile_nav {
+        width: 60%;
+        height: 100%;
+        position: fixed;
+        top: 100px;
+        left: -100%;
+        background-color: var(--color-w);
+        border-top: 1px solid var(--color-b);
+        border-right: 1px solid var(--color-b);
+        z-index: 999;
+        transition: 0.6s;
+    }
+    .mobile_nav.active {
+        left: 0;
+        transition: 0.6s;
+    }
+
+    .mobile_nav .gnb {}
+    .mobile_nav .gnb > li {
+        border-bottom: 1px solid var(--color-g1);
+    }
+    .mobile_nav .gnb > li .depth01 {
+        display: block;
+        font-size: 2.2rem;
+        position: relative;
+        color: var(--color-b);
+        padding: 15px 30px;
+    }
+    .mobile_nav .gnb > li.on .depth01 {
+        background-color: var(--color-b);
+    }
+    .mobile_nav .gnb > li .depth01.color-p {
+        font-weight: var(--font-bold);
+        color: var(--color-p);
+    }
+    .mobile_nav .gnb > li .depth02 {
+        display: none;
+        padding-left: 30px;
+    }
+
+    .mobile_nav .gnb > li .depth02 li {}
+    .mobile_nav .gnb > li .depth02 li a {
+        display: block;
+        font-size: 1.8rem;
+        margin: 15px 0;
+    }
+    .header .header_text_slide .text_wrap > div p:nth-child(1),
+    .header .header_text_slide .text_wrap > div p:nth-child(3) {
+        display: none;
+    }
+
+    /**************** section01 ****************/
+    .section01 .inner .title .view_btn a p::before {
+        width: 100% !important;
+    }
+    .section01 .inner .list_wrap {
+        flex-direction: column;
+        row-gap: 30px;
+    }
+}
+
+/************************************** footer ***********************************/
+
+
+.footer {
+    margin: 160px 0;
+}
+.footer .inner {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.footer .inner .footer_left {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+}
+.footer .inner .footer_left > div {}
+.footer .inner .footer_left > div strong {
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: 40px;
+}
+.footer .inner .footer_left > div .list {}
+.footer .inner .footer_left > div .list li {}
+.footer .inner .footer_left > div .list li a {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: var(--font-light);
+    margin-bottom: 15px;
+}
+
+.footer .inner .footer_left > div.follow_us {}
+.footer .inner .footer_left > div.follow_us .list {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+.footer .inner .footer_left > div.follow_us .list li {}
+.footer .inner .footer_left > div.follow_us .list li a {
+    display: block;
+    width: 30px;
+    margin: 0;
+}
+.footer .inner .footer_left > div.follow_us .list li a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.footer .inner .footer_right {}
+.footer .inner .footer_right .text_list {}
+.footer .inner .footer_right .text_list li {
+    font-size: 1.4rem;
+    color: var(--color-g3);
+    letter-spacing: 1.3px;
+    margin-bottom: 15px;
+}

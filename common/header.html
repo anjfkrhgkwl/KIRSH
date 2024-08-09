@@ -1,0 +1,156 @@
+    <body>
+        <script>
+                let depth01 = $('.pc .gnb > li')
+                let depth02 = $('.pc .depth02')
+                depth01.mouseleave(function(){
+                    depth02.stop().slideUp(600);
+                });
+                depth01.mouseenter(function(){
+                    $(this).children('.depth02').stop().slideDown(600);
+        
+                });
+                let langBtn = $('.util_list > li')
+                let lang = $('.lang_wrap')
+                langBtn.mouseleave(function(){
+                    lang.stop().slideUp(600);
+                })
+                langBtn.mouseenter(function(){
+                    $(this).children('.lang_wrap').stop().slideDown(600);
+                })
+
+                let mobileMenu = $('.menu_icon > div');
+                let mobileNav = $('.mobile_nav');
+                let body = $('body');
+
+                mobileMenu.click(function(){
+                    mobileMenu.toggleClass('active');
+                    mobileNav.toggleClass('active');
+                    body.toggleClass('menustop');
+                });
+
+                let mobileDepth01 = $('.mobile .gnb > li');
+                let mobileDepth02 = $('.mobile .depth02');
+
+                mobileDepth01.click(function(){
+                    $(this).children('.depth02').slideToggle(500);
+                    mobileDepth01.eq(1).toggleClass('on');
+                });
+
+        </script>
+        <div class="header">
+            <div class="inner">
+                <h1 class="logo">
+                    <a href="#">KIRSH</a>
+                </h1><!-- .logo end  -->
+                <nav class="pc pc_nav">
+                    <ul class="gnb">
+                        <li>
+                            <a href="#" class="depth01 color-r">SUMMER SALE</a>
+                        </li>
+                        <li>
+                            <a href="#" class="depth01">SHOP</a>
+                            <ul class="depth02">
+                                <li><a href="#">New</a></li>
+                                <li><a href="#">Clothing</a></li>
+                                <li><a href="#">Pocket</a></li>
+                                <li><a href="#">Shoes</a></li>
+                                <li><a href="#">Headwear</a></li>
+                                <li><a href="#">Accessories</a></li>
+                            </ul><!-- .depth02 end -->
+                        </li>
+                        <li>
+                            <a href="#" class="depth01">COLLABOPATION</a>
+                        </li>
+                        <li>
+                            <a href="#" class="depth01">ARCHIVE</a>
+                        </li>
+                        <li>
+                            <a href="#" class="depth01">EVENT</a>
+                        </li>
+                        <li>
+                            <a href="#" class="depth01">OUTLET</a>
+                        </li>
+                    </ul><!-- .gnb end -->
+                </nav><!-- .nav end -->
+
+                <div class="mobile mobile_menu">
+                    <div class="menu_icon">
+                        <div><span>메뉴아이콘</span></div>
+                        <div><span>메뉴아이콘</span></div>
+                        <div><span>메뉴아이콘</span></div>
+                        <div><span>메뉴아이콘</span></div>
+                    </div><!-- .menu_icon end -->
+                </div><!-- .mobile_menu end -->
+
+                <nav class="mobile mobile_nav">
+                    <ul class="gnb">
+                        <li>
+                            <a href="#" class="depth01 color-r">SUMMER SALE</a>
+                        </li>
+                        <li>
+                            <a href="#" class="depth01 color-p">SHOP</a>
+                            <ul class="depth02">
+                                <li><a href="#">New</a></li>
+                                <li><a href="#">Clothing</a></li>
+                                <li><a href="#">Pocket</a></li>
+                                <li><a href="#">Shoes</a></li>
+                                <li><a href="#">Headwear</a></li>
+                                <li><a href="#">Accessories</a></li>
+                            </ul><!-- .depth02 end -->
+                        </li>
+                        <li>
+                            <a href="#" class="depth01">COLLABOPATION</a>
+                        </li>
+                        <li>
+                            <a href="#" class="depth01">ARCHIVE</a>
+                        </li>
+                        <li>
+                            <a href="#" class="depth01">EVENT</a>
+                        </li>
+                        <li>
+                            <a href="#" class="depth01">OUTLET</a>
+                        </li>
+                    </ul><!-- .gnb end -->
+                </nav><!-- .nav end -->
+                
+                <ul class="util_list">
+                    <li class="search">
+                        <a href="#"><img src="img/icon/search-01.svg" alt="search"></a>
+                    </li>
+                    <li class="wish_list">
+                        <a href="#"><img src="img/icon/heart.svg" alt="wish_list"></a>
+                    </li>
+                    <li class="bag">
+                        <a href="#"><img src="img/icon/bag-04.svg" alt="bag"></a>
+                    </li>
+                    <li class="mypage">
+                        <a href="#"><img src="img/icon/user-profile-01.svg" alt="mypage"></a>
+                    </li>
+                    <li class="lang">
+                        <a href="#"><img src="img/icon/globe.svg" alt="lang"></a>
+                        <ul class="lang_wrap">
+                            <li class="kor"><a href="#">Kor</a></li>
+                            <li class="eng"><a href="#">Eng</a></li>
+                        </ul>
+                    </li>
+                </ul><!-- .util_list end -->
+            </div><!-- .inner end -->
+            <div class="header_text_slide">
+                <div class="text_wrap">
+                    <div class="text01">
+                        <p>콜라보 상품 10만원 이상 구매 시 타투 스티커 증정</p>
+                        <p>24SS 썸머세일 ~50% 🍒</p>
+                        <p>KIRSH X GOOD LUCK TROLLS “MERRY GO ROUND” RELEASE 🍀</p>
+                        <p>콜라보 상품 10만원 이상 구매 시 타투 스티커 증정</p>
+                        <p>24SS 썸머세일 ~50% 🍒</p>
+                    </div><!-- .text01 end -->
+                    <div class="text02">
+                        <p>KIRSH X GOOD LUCK TROLLS “MERRY GO ROUND” RELEASE 🍀</p>
+                        <p>콜라보 상품 10만원 이상 구매 시 타투 스티커 증정</p>
+                        <p>24SS 썸머세일 ~50% 🍒</p>
+                        <p>KIRSH X GOOD LUCK TROLLS “MERRY GO ROUND” RELEASE 🍀</p>
+                    </div><!-- .text02 end -->
+                </div><!-- .text_wrap end -->
+            </div><!-- .header_text_slide end -->
+        </div><!-- .header end -->
+    </body>
