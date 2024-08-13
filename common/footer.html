@@ -1,4 +1,35 @@
 <body>
+    <script>
+        $('a').click(function (event) {
+            event.preventDefault();
+            //클릭 이벤트 무시
+            //preventDefault : 이벤트 무시
+        });
+
+        let footermobileMenu = $('.footer_left div');
+        let footermobileList = $('.footer_left .list');
+        //변수명이 같으면 안됨
+
+        footermobileList.removeClass('on');
+
+        footermobileMenu.click(function () {
+            //alert('o')
+            if($(this).children('.list').css('display') === 'none') {
+                footermobileList.slideUp(500);
+                footermobileMenu.children('strong').removeClass('on');
+
+                $(this).children('strong').addClass('on');
+                $(this).children('.list').slideDown(500);
+            } else {
+                footermobileList.slideUp(500);
+                footermobileMenu.children('strong').removeClass('on');
+
+                $(this).children('.list').slideUp(500);
+                $(this).children('strong').removeClass('on');
+            }
+        });
+
+    </script>
     <div class="footer">
         <div class="inner">
             <div class="footer_left">
@@ -13,7 +44,7 @@
                         <li><a href="#">1:1 Q&A</a></li>
                     </ul><!-- .list end -->
                 </div><!-- .information end -->
-    
+
                 <div class="terms_conditions">
                     <strong>TERMS & CONDITIONS</strong>
                     <ul class="list">
@@ -21,33 +52,50 @@
                         <li><a href="#">Privacy pilicy</a></li>
                     </ul><!-- .list end -->
                 </div><!-- .terms_conditions end -->
-    
+
                 <div class="follow_us">
                     <strong>FOLLOW US</strong>
-                    <ul class="list">
+                    <ul class="pc_list list">
                         <li><a href="#">
-                            <img src="img/icon/FacebookLogo.svg" alt="facebook">
-                        </a></li>
+                                <img src="img/icon/FacebookLogo.svg" alt="facebook">
+                            </a></li>
                         <li><a href="#">
-                            <img src="img/icon/InstagramLogo.svg" alt="instagram">
-                        </a></li>
+                                <img src="img/icon/InstagramLogo.svg" alt="instagram">
+                            </a></li>
                         <li><a href="#">
-                            <img src="img/icon/YoutubeLogo.svg" alt="youtube">
-                        </a></li>
+                                <img src="img/icon/YoutubeLogo.svg" alt="youtube">
+                            </a></li>
                         <li><a href="#">
-                            <img src="img/icon/TiktokLogo.svg" alt="tiktok">
-                        </a></li>
+                                <img src="img/icon/TiktokLogo.svg" alt="tiktok">
+                            </a></li>
                         <li><a href="#">
-                            <img src="img/icon/XLogo.svg" alt="xlogo">
-                        </a></li>
+                                <img src="img/icon/XLogo.svg" alt="xlogo">
+                            </a></li>
+                    </ul>
+                    <ul class="list mobile_list">
+                        <li><a href="#">
+                                facebook
+                            </a></li>
+                        <li><a href="#">
+                                instagram
+                            </a></li>
+                        <li><a href="#">
+                                youtube
+                            </a></li>
+                        <li><a href="#">
+                                tiktok
+                            </a></li>
+                        <li><a href="#">
+                                xlogo
+                            </a></li>
                     </ul>
                 </div><!-- .follow_us end -->
             </div><!-- .footer_left end -->
-    
+
             <div class="footer_right">
                 <ul class="text_list">
                     <li>8F, 242, Pangyo-ro, Bundang-gu, Seongnam-si, Gyeonggi-do</li>
-                    <li>Business License. 284-81-00849 Online Business License. 제2023-성남분당A-0337호</li>
+                    <li>Business License. 284-81-00849 Online Business License. <br> 제2023-성남분당A-0337호</li>
                     <li>kirsh.official@gmail.com</li>
                     <li>주식회사 비바스튜디오 CEO이준권</li>
                 </ul><!-- .text_list end -->

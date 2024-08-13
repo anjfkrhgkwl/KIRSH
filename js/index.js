@@ -1,16 +1,17 @@
 
 
 /*************** 클릭 이벤트 무시 ****************/
-$(function(){
-    $('a').click(function(event){
+$(function () {
+
+
+    $('a').click(function (event) {
         event.preventDefault();
         //클릭 이벤트 무시
         //preventDefault : 이벤트 무시
     });
 
 
-
-/**********  tabmenu  ***********/
+    /**********  tabmenu  ***********/
 
     let tabMenu = $('.section02 .tab_menu li');
     let tabList = $('.section02 .tab_list_wrap');
@@ -30,18 +31,22 @@ $(function(){
     })
 
 
-/*************** 움직이는 이미지 ******************/
+    /*************** 움직이는 이미지 ******************/
 
     let aniItem = $('.ani_item');
-    
-    aniItem.mouseenter(function(){
-        aniItem.addClass('on');
-    });
-    aniItem.mouseleave(function(){
-        aniItem.removeClass('on');
-    })
 
-}); //image_hover
+    aniItem.click(function(){
+        if(aniItem.css('transform') === 'rotate(25deg)') {
+            alert('o')
+        } else {
+            alert('x')
+            aniItem.animate({
+                'transform' : 'rotate(-25deg)'
+            }, 500)
+        }
+    });
+
+});
 
 
 
